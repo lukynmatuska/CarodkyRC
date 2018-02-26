@@ -1,0 +1,66 @@
+ <html>
+ <head>
+    
+    <meta charset="utf-8">
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
+
+    </head>
+    </body>
+
+  <table class="mui-table mui-table--bordered">
+  <thead>
+    <tr>
+      <th>Kdo</th>
+      <th>Komu</th>
+      <th>Vzkaz</th>
+      <th>Song</th>
+      <th>Hotovo</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lukyn Matuška</td>
+      <td>Martin the DJ</td>
+      <td>Pro Martina<i class="em em-heart"></i></td>
+      <td>Ofenbach - Be Mine✔️</td>
+      <td>✔️✅</td>
+    </tr>
+    <tr>
+      <td>Objednavatel 2</td>
+      <td>Příjimač 2</td>
+      <td>Pozdravuju přijímače</td>
+      <td>Scooter - How much is the fish?</td>
+      <td>❌❎</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!--<h1>Výpis článků</h1>
+<?
+$spojeni = mysql_connect(localhost,"root","" );
+mysql_select_db(pokus, $spojeni);
+$vysledek = mysql_query( 
+"SELECT * FROM clanky ORDER BY datum", 
+$spojeni);
+/* Konec přímé práce s databází. */
+
+/* Cyklem procházím řádky výsledku a vytahuju z něj hodnoty do nového pole $zaznam*/
+while ($zaznam = mysql_fetch_array($vysledek) ): 
+echo "<p><a href='vypisclanku.php?id=";
+echo $zaznam["id"]; 
+echo "'>";
+echo $zaznam["titulek"];
+echo "<br> "; 
+echo $zaznam["uvod"];
+echo "<br>";
+echo "Autor: ";
+echo $zaznam["autor"];
+echo "</p>";
+endwhile;
+?>        -->
+</body>
+</html>

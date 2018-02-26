@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zpětná vazba - Čarodky Rudice</title>
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
+  </head>
+      <body>
+
+    <div class="mui-container">
+      <div class="mui-panel" >
+      <div style="text-align:center">
+      <h1 style="text-align:center">Písničky na přání</h1>
+  <a href="./../">                      <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
+  <a href="./">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+  
+  <!--<form class="mui-form" name="zpetnaVazba" method="post" action="zpetnaVazba.php" onsubmit="return validate.check(this)">-->
+  <form class="mui-form" name="zpetnaVazba" method="post" action="run.php" onsubmit="return validate.check(this)">
+  <!--<legend><h1 style="text-align:center">Zpětná vazba</h1></legend>-->
+
+  <div class="mui-textfield">
+  <input type="text" name="zpetnaVazba" id="zpetnaVazba" placeholder="Co by jste vylepšil(a)?" required>
+</div>  
+  
+  <div style="text-align: center; /*display: inline-block; */s">
+  <div class="g-recaptcha" data-sitekey="6Ld1l0AUAAAAAEU00Mds60evT-RIID6_37V9UYX2"></div>
+  <button  type="submit" class="mui-btn mui-btn--primary mui-btn--raised">Odeslat</button>
+  </div>
+</form>
+
+<!--https://youtu.be/5By--1F7bWU -->
+
+
+
+
+<div class="paticka" style="text-alig: center;">
+   <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="http://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
+   </p>
+   </div>
+   
+   </div>
+</div>
+
+
+</body>
+</html>
