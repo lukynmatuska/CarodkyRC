@@ -1,5 +1,5 @@
 <?php
-include "dbconnect.php";
+include "./../dbconnect.php";
 header('Content-Type: text/html; charset=utf-8');
 $badCaptcha = "badcaptcha.htm"; // reCAPTCHA error page
 

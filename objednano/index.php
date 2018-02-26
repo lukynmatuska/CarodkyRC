@@ -12,11 +12,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#c7d5ed"><!--4285f4">-->
     <link rel="shortcut icon" href="./../music.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <title>Výsledky - Zpětná vazba - Čarodky Rudice</title>
+    <title>Objednáno - Písničky na přání - Čarodky Rudice</title>
+    <meta property="og:title" content="Objednáno - Čarodky Rudice" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="http://carodky.buchticka.eu/objednano" />
+    <meta property="og:image" content="http://carodky.buchticka.eu/pexels-photo-196652.jpeg" />
+    <meta property="og:description" content="" />
+    <meta property="fb:app_id" content="" />
     <style>
     html{
     height: 100%;
-    background-image: URL("./../../pexels-photo-196652.jpeg");
+    background-image: URL("./../pexels-photo-196652.jpeg");
     background-color="black";
     background-position: center;
     background-repeat: no-repeat;
@@ -28,61 +34,60 @@
     <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
     <!----<link href="/mui.min.css" rel="stylesheet" type="text/css" />    -->
     <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
-  
-  <link rel="stylesheet" type="text/css" href="freecontactform.css">
-    <script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("table.html"); 
-    });
-    </script>
     </head>
 <body style="background-color: transparent; font-family: Trebuchet MS;">
     <div class="mui-container">
       <div class="mui-panel" >
       <div style="text-align:center">
-      <h1 style="text-align:center">Objednáno</h1>
-  <a href="./../../">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
-  <a href="./../">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+      <h1 style="text-align:center">Objednáno - Písničky na přání</h1>
+  <a href="./../">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
+  <a href="./../zpetnaVazba">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
   
-<!--
-<table class="mui-table mui-table--bordered">
+<?php
+header("Content-Type: text/html;charset=UTF-8");
+include "./../dbconnect.php";
+mysqli_query($conn, "SET NAMES 'UTF-8'");
+$sql = 'SELECT * 
+		FROM pisnicky_na_prani';
+$query = mysqli_query($conn, $sql);
+
+if (!$query) {
+	die ('SQL Error: ' . mysqli_error($conn));
+}
+?>
+ 
+		<table class="mui-table mui-table--bordered">
   <thead>
     <tr>
+      <th style="width: 12%">ID žádosti</th>
       <th>Kdo</th>
       <th>Komu</th>
       <th>Vzkaz</th>
       <th>Song</th>
       <th>Hotovo</th>
-      
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Lukyn Matuška</td>
-      <td>Martin the DJ</td>
-      <td>Pro Martina<i class="em em-heart"></i></td>
-      <td>Ofenbach - Be Mine✔️</td>
-      <td>✔️✅</td>
-    </tr>
-    <tr>
-      <td>Objednavatel 2</td>
-      <td>Příjimač 2</td>
-      <td>Pozdravuju přijímače</td>
-      <td>Scooter - How much is the fish?</td>
-      <td>❌❎</td>
-    </tr>
-  </tbody>
-</table>-->
-<br>
-<form action="table.php">
-
-</form>
-<br>
-<br>
-                    <div id="includedContent"></div>
-
-
+  <?php
+		while ($row = mysqli_fetch_array($query))
+		{if($row['hotovo'] =! 0){
+    $done = "True";    
+    }else{
+    $done = "False";
+    }echo utf8_encode('
+      <tr>
+      <td>'.$row['id_zadosti'].'</td>
+      <td>'.$row['kdo'].'</td>
+      <td>'.$row['komu'].'</td>
+      <td>'.$row['vzkaz'].'</td>
+      <td>'.$row['song'].'</td>
+      <td>'.$done.'</td>
+      </tr>');
+		}?>
+    </tbody>
+</table>
+</body>
+</html>
 
 <div class="paticka" style="text-alig: center;">
    <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="http://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
