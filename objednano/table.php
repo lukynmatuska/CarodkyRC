@@ -69,7 +69,7 @@ if (!$query) {
     }echo utf8_encode('
       <tr>
       <td>'.$row['id_zadosti'].'</td>
-      <td>'.$row['kdo'].'</td>
+      <td>'.$row['kdo'].'</td>                   //kdo, komu, vzkaz, song 
       <td>'.$row['komu'].'</td>
       <td>'.$row['vzkaz'].'</td>
       <td>'.$row['song'].'</td>

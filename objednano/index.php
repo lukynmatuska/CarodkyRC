@@ -59,29 +59,30 @@ if (!$query) {
 		<table class="mui-table mui-table--bordered">
   <thead>
     <tr>
-      <th style="width: 12%">ID žádosti</th>
-      <th>Kdo</th>
-      <th>Komu</th>
-      <th>Vzkaz</th>
-      <th>Song</th>
-      <th>Hotovo</th>
+      <th style="text-align: center width: 8%">ID žádosti</th>
+      <th style="text-align: center">Kdo</th>
+      <th style="text-align: center">Komu</th>
+      <th style="text-align: center">Vzkaz</th>
+      <th style="text-align: center">Song</th>
+      <th style="text-align: center">Hotovo</th>
     </tr>
   </thead>
   <tbody>
   <?php
 		while ($row = mysqli_fetch_array($query))
-		{if($row['hotovo'] =! 0){
-    $done = "True";    
+		{if($row['hotovo'] == 0){
+    $done = "Ne";    
     }else{
-    $done = "False";
+    $done = "Ano";
     }echo utf8_encode('
       <tr>
-      <td>'.$row['id_zadosti'].'</td>
-      <td>'.$row['kdo'].'</td>
-      <td>'.$row['komu'].'</td>
-      <td>'.$row['vzkaz'].'</td>
-      <td>'.$row['song'].'</td>
-      <td>'.$done.'</td>
+      <td style="text-align: center">'.$row['id_zadosti'].'</td>
+      <td style="text-align: center">'.$row['kdo'].'</td>
+      <td style="text-align: center">'.$row['komu'].'</td>
+      <td style="text-align: center">'.$row['vzkaz'].'</td>
+      <td style="text-align: center">'.$row['song'].'</td>
+      <!--<td style="text-align: center">'.$row['hotovo'].'</td>-->
+      <td style="text-align: center">'.$done.'</td>
       </tr>');
 		}?>
     </tbody>
