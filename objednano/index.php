@@ -22,7 +22,7 @@
     <style>
     html{
     height: 100%;
-    background-image: URL("./../pexels-photo-196652.jpeg");
+    background-image: URL("./../background.jpg");
     background-color="black";
     background-position: center;
     background-repeat: no-repeat;
