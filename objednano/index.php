@@ -15,8 +15,8 @@
     <title>Objednáno - Písničky na přání - Čarodky Rudice</title>
     <meta property="og:title" content="Objednáno - Čarodky Rudice" />
     <meta property="og:type" content="" />
-    <meta property="og:url" content="http://carodky.buchticka.eu/objednano" />
-    <meta property="og:image" content="http://carodky.buchticka.eu/pexels-photo-196652.jpeg" />
+    <meta property="og:url" content="https://carodky.buchticka.eu/objednano" />
+    <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
     <meta property="og:description" content="" />
     <meta property="fb:app_id" content="" />
     <style>
@@ -64,7 +64,7 @@ if (!$query) {
       <th style="text-align: center">Komu</th>
       <th style="text-align: center">Vzkaz</th>
       <th style="text-align: center">Song</th>
-      <th style="text-align: center">Hotovo</th>
+      <!--<th style="text-align: center">Hotovo</th>-->
     </tr>
   </thead>
   <tbody>
@@ -81,8 +81,13 @@ if (!$query) {
       <td style="text-align: center">'.$row['komu'].'</td>
       <td style="text-align: center">'.$row['vzkaz'].'</td>
       <td style="text-align: center">'.$row['song'].'</td>
-      <!--<td style="text-align: center">'.$row['hotovo'].'</td>-->
-      <td style="text-align: center">'.$done.'</td>
+      <!--<td style="text-align: center">
+      <div class="mui-select">
+      <select name="done" size="1"> 
+            <option value="False">Ne
+            <option value="True">Ano
+      </select></div>
+      '.$done.'</td>-->
       </tr>');
 		}?>
     </tbody>
@@ -91,7 +96,7 @@ if (!$query) {
 </html>
 
 <div class="paticka" style="text-alig: center;">
-   <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="http://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
+   <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="https://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
    </p>
    </div>
    

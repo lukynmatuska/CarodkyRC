@@ -5,14 +5,13 @@
     <!--<meta charset="iso-8859-2">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="refresh" content="10;url=https://carodky.buchticka.eu/zpetnavazba">
-    <link rel="shortcut icon" href="/../music.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/music.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <title>Díky - Čarodky Rudice</title>
+    <title>404 Nenalezeno - Čarodky Rudice</title>
     <style>
     html{
     height: 100%;
-    background-image: URL("./../pexels-photo-196652.jpeg");
+    background-image: URL("./pexels-photo-196652.jpeg");
     background-color="black";
     background-position: center;
     background-repeat: no-repeat;
@@ -31,26 +30,25 @@
       <!-- bgcolor="black" background="background.jpg" bgproperties="scroll" style="height:auto; background-position: center; background-repeat: no-repeat; background-size: cover; background-height:auto;"><!--"pexels-photo-196652.jpeg" -->
 
     <!-- example content -->
-    <div class="mui-container">
+    <div style="width:100%; " class="mui-container">
       <div class="mui-panel" >
       <div style="text-align:center">
-      
-      <h1 style="text-align:center">Písničky na přání</h1>
-      <h2>Nevyplnil(a) jste ověření reCAPTCHA.</h2>
-	<p>Zkuste to znovu.</p>  
-  <p style="font-size:95%"><a href="./" >Vrátit se zpět.</a></p>  
-  </div>
+  <h1 style="text-align:center">404 Nenalezeno</h1>
+  <a href="./">                      <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
+  <a href="./zpetnavazba">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
   
+  
+
+
+
 <div class="paticka" style="text-alig: center;">
-   <!--<p>Ahoj,<br> já jsem  <a href="https://buchticka.eu">buchticka.eu</a> :)</p>-->
    <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="http://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
    </p>
    </div>
    
    </div>
 </div>
-
-
+</div>
 
 </body>
 </html>

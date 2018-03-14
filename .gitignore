@@ -1,3 +1,15 @@
+#SSL certifikaty atd.
+.well-known
+
+#Credentials to database
+dbconnect.php
+
+#error logs
+logs/
+
+#plakat
+plakat/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -99,3 +111,5 @@ ENV/
 
 # mypy
 .mypy_cache/
+error_logs
+dbconnect.php
