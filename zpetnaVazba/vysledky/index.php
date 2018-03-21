@@ -16,7 +16,7 @@
     <style>
     html{
     height: 100%;
-    background-image: URL("./../../pexels-photo-196652.jpeg");
+    background-image: URL("./../../background.jpg");
     background-color="black";
     background-position: center;
     background-repeat: no-repeat;
@@ -34,8 +34,10 @@
       <div class="mui-panel" >
       <div style="text-align:center">
       <h1 style="text-align:center">Výsledky - Zpětná vazba</h1>
+  <a href="./../../objednano">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání - Objednáno </button></a>
   <a href="./../../">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
   <a href="./../">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+  <a href="./../vysledky">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba - Výsledky  </button></a>
   
 <?php
 header("Content-Type: text/html;charset=UTF-8");
@@ -62,11 +64,11 @@ if (!$query) {
 		$no 	= 1;
 		while ($row = mysqli_fetch_array($query))
 		{
-			echo utf8_encode('
+			echo '
       <tr>
       <td>'.$row['id_vzkazu'].'</td>
       <td>'.$row['vzkaz_zpetne_vazby'].'</td>
-      </tr>');
+      </tr>';
 			$no++;
 		}?>
     </tbody>

@@ -5,14 +5,14 @@
     <!--<meta charset="iso-8859-2">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="refresh" content="7;url=http://carodky.buchticka.eu/">
+    <meta http-equiv="refresh" content="5;url=https://www.toplist.cz/stat/result/1782012/day-graph/browser/os/entry-page/referrer/resolution/color/country/?day=0">
     <link rel="shortcut icon" href="/music.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <title>Díky - Čarodky Rudice</title>
+    <title>Statistika - Čarodky Rudice</title>
     <style>
     html{
     height: 100%;
-    background-image: URL("background.jpg");
+    background-image: URL("./../background.jpg");
     background-color="black";
     background-position: center;
     background-repeat: no-repeat;
@@ -35,10 +35,10 @@
       <div class="mui-panel" >
       <div style="text-align:center">
       
-      <h1 style="text-align:center">Písničky na přání</h1>
-      <h2>Díky za tip.</h2>
-	<p>Vaše písnička bude přidána do fronty.</p>  
-  <p style="font-size:95%"><a href="./" >Nové přání zde</a></p>  
+      <h1 style="text-align:center">Statistika</h1>
+      <h2>Budete přesměrováni!</h2>
+	<p>Vyčkejte 5 vteřin.</p>  
+  <p style="font-size:95%"><a href="https://www.toplist.cz/stat/result/1782012/day-graph/browser/os/entry-page/referrer/resolution/color/country/?day=0" >Pokud jste nebyli přesměrováni klikněte zde.</a></p>  
   </div>
   
 <div class="paticka" style="text-alig: center;">

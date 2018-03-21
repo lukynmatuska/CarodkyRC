@@ -80,15 +80,25 @@
 
 
 
-
 <div class="paticka" style="text-alig: center;">
-   <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="http://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
+   <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="https://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
    </p>
    </div>
    
    </div>
 </div>
 </div>
+   <div style="text-align: center;"><a href="https://www.toplist.cz"><script language="JavaScript" type="text/javascript">
+<!--
+document.write('<img src="https://toplist.cz/count.asp?id=1782012&logo=mc&http='+
+escape(document.referrer)+'&t='+escape(document.title)+
+'&wi='+escape(window.screen.width)+'&he='+escape(window.screen.height)+'&cd='+
+escape(window.screen.colorDepth)+'" width="88" height="60" border=0 alt="TOPlist" />');
+//--></script><noscript><img src="https://toplist.cz/count.asp?id=1782012&logo=mc" border="0"
+alt="TOPlist" width="88" height="60" /></noscript></a>
+</div>        <a style="color: transparent;" href="https://www.toplist.cz/stat/result/1782012/day-graph/browser/os/entry-page/referrer/resolution/color/country/?day=0">DETAILNÍ STATISTIKY</a>
 
+
+    
 </body>
 </html>

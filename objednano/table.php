@@ -44,7 +44,7 @@ if (!$query) {
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <!--<tr>
       <td>test</td>
       <td>Lukyn Matuška</td>
       <td>Martin the DJ</td>
@@ -59,22 +59,22 @@ if (!$query) {
       <td>Pozdravuju přijímače</td>
       <td>Scooter - How much is the fish?</td>
       <td>❌❎</td>
-    </tr>
+    </tr>     -->
   <?php
 		while ($row = mysqli_fetch_array($query))
 		{if($row['hotovo'] =! 0){
-    $done = "True";    
+    $done = "Ne";    
     }else{
-    $done = "False";
-    }echo utf8_encode('
+    $done = "Ano";
+    }echo '
       <tr>
       <td>'.$row['id_zadosti'].'</td>
-      <td>'.$row['kdo'].'</td>                   //kdo, komu, vzkaz, song 
+      <td>'.$row['kdo'].'</td>                  <!-- //kdo, komu, vzkaz, song--> 
       <td>'.$row['komu'].'</td>
       <td>'.$row['vzkaz'].'</td>
       <td>'.$row['song'].'</td>
       <td>'.$done.'</td>
-      </tr>');
+      </tr>';
 		}?>
     </tbody>
 </table>

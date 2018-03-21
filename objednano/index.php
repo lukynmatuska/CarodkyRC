@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="./../music.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <title>Objednáno - Písničky na přání - Čarodky Rudice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta property="og:title" content="Objednáno - Čarodky Rudice" />
     <meta property="og:type" content="" />
     <meta property="og:url" content="https://carodky.buchticka.eu/objednano" />
@@ -40,8 +41,10 @@
       <div class="mui-panel" >
       <div style="text-align:center">
       <h1 style="text-align:center">Objednáno - Písničky na přání</h1>
-  <a href="./../">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
+  <a href="./">                         <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání - Objednáno </button></a>
+  <a href="./../">                      <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
   <a href="./../zpetnaVazba">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+  <a href="./../zpetnaVazba/vysledky">  <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba - Výsledky  </button></a>
   
 <?php
 header("Content-Type: text/html;charset=UTF-8");
@@ -59,7 +62,7 @@ if (!$query) {
 		<table class="mui-table mui-table--bordered">
   <thead>
     <tr>
-      <th style="text-align: center width: 8%">ID žádosti</th>
+      <th style="text-align: center; width: 8%">ID žádosti</th>
       <th style="text-align: center">Kdo</th>
       <th style="text-align: center">Komu</th>
       <th style="text-align: center">Vzkaz</th>
@@ -74,7 +77,7 @@ if (!$query) {
     $done = "Ne";    
     }else{
     $done = "Ano";
-    }echo utf8_encode('
+    }echo '
       <tr>
       <td style="text-align: center">'.$row['id_zadosti'].'</td>
       <td style="text-align: center">'.$row['kdo'].'</td>
@@ -88,7 +91,7 @@ if (!$query) {
             <option value="True">Ano
       </select></div>
       '.$done.'</td>-->
-      </tr>');
+      </tr>';
 		}?>
     </tbody>
 </table>
