@@ -27,21 +27,38 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- load MUI -->
     <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <!----<link href="/mui.min.css" rel="stylesheet" type="text/css" /mu>    -->
+    <!--<link href="/mui.min.css" rel="stylesheet" type="text/css" /mu>    -->
     <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
   
   <link rel="stylesheet" type="text/css" href="freecontactform.css">
+
+  <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.buchticka.eu/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
     </head>
       <body style="background-color: transparent; font-family: Trebuchet MS">
-      <!-- bgcolor="black" background="background.jpg" bgproperties="scroll" style="height:auto; background-position: center; background-repeat: no-repeat; background-size: cover; background-height:auto;"><!--"pexels-photo-196652.jpeg" -->
+      <!-- bgcolor="black" background="background.jpg" bgproperties="scroll" style="height:auto; background-position: center; background-repeat: no-repeat; background-size: cover; background-height:auto;"> -->
 
     <!-- example content -->
     <div style="width:100%; " class="mui-container">
       <div class="mui-panel" >
       <div style="text-align:center">
   <h1 style="text-align:center">Písničky na přání</h1>
-  <a href="./">                      <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
-  <a href="./zpetnavazba">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+  <a href="./"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
+  <a href="./objednano"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>
+  <a href="./zpetnavazba"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
   
   <!--<form class="mui-form" name="freecontactform" method="post" action="freecontactformprocess.php" onsubmit="return validate.check(this)">-->
   <form class="mui-form" name="freecontactform" method="post" action="run.php" onsubmit="return validate.check(this)">

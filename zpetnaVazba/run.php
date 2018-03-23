@@ -1,7 +1,7 @@
 <?php
 include "./../dbconnect.php";
 header('Content-Type: text/html; charset=utf-8');
-$badCaptcha = "badcaptcha.htm"; // reCAPTCHA error page
+$badCaptcha = "badcaptcha.html"; // reCAPTCHA error page
 
 if(isset($_POST['g-recaptcha-response'])){
   $captcha = $_POST['g-recaptcha-response'];
@@ -13,7 +13,7 @@ $secretKey = "6Ld1l0AUAAAAAKn_3kPTvNAeQS5RL70O5HvkihRt";
 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha);
 $responseKeys = json_decode($response,true);
  
-if(isset($_POST['zpetnaVazba'])){
+if(isset($_POST['zpetnaVazba']) and $captcha){
     $to = "CarodkyRC@seznam.cz"; // this is your Email address
     /*$from = $_POST['email']; // this is the sender's Email address
     $first_name = $_POST['first_name'];
