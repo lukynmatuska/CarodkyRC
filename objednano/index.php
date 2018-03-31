@@ -4,39 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#c7d5ed">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#c7d5ed">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#c7d5ed"><!--4285f4">-->
-    <link rel="shortcut icon" href="./../music.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/../favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href="/../style.css" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="/mui.min.css" rel="stylesheet" type="text/css" /mu>    -->
+    <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
     <title>Objednáno - Písničky na přání - Čarodky Rudice</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta property="og:title" content="Objednáno - Čarodky Rudice" />
     <meta property="og:type" content="" />
     <meta property="og:url" content="https://carodky.buchticka.eu/objednano" />
     <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Výpis žádostí o přehrání písničky" />
     <meta property="fb:app_id" content="" />
-    <style>
-    html{
-    height: 100%;
-    background-image: URL("./../background.jpg");
-    background-color="black";
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-height:auto;*/}
-    </style>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <!-- load MUI -->
-    <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <!----<link href="/mui.min.css" rel="stylesheet" type="text/css" />    -->
-    <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
     
-    <!-- Matomo -->
+  
+  <!-- Matomo -->
 <script type="text/javascript">
   var _paq = _paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
@@ -51,6 +36,7 @@
   })();
 </script>
 <!-- End Matomo Code -->
+    
 </head>
 <body style="background-color: transparent; font-family: Trebuchet MS;">
     <div class="mui-container">

@@ -10,34 +10,49 @@
     <meta name="msapplication-navbutton-color" content="#c7d5ed">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#c7d5ed"><!--4285f4">-->
-    <link rel="shortcut icon" href="./../music.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/../../favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <title>Výsledky - Zpětná vazba - Čarodky Rudice</title>
-    <style>
-    html{
-    height: 100%;
-    background-image: URL("./../../background.jpg");
-    background-color="black";
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-height:auto;*/}
-    </style>
+    <link href="/../../style.css" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- load MUI -->
     <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <!----<link href="/mui.min.css" rel="stylesheet" type="text/css" />    -->
+    <!--<link href="/mui.min.css" rel="stylesheet" type="text/css" /mu>    -->
     <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
-    </head>
+    <title>Výsledky - Zpětná vazba - Čarodky Rudice</title>
+    <meta property="og:title" content="Výsledky - Zpětná vazba - Čarodky Rudice" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="https://carodky.buchticka.eu/zpetnaVazba/vysledky" />
+    <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
+    <meta property="og:description" content="Výsledky zpětné vazby" />
+    <meta property="fb:app_id" content="" />
+    
+  
+  <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.buchticka.eu/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+    
+</head>
 <body style="background-color: transparent; font-family: Trebuchet MS;">
     <div class="mui-container">
       <div class="mui-panel" >
       <div style="text-align:center">
       <h1 style="text-align:center">Výsledky - Zpětná vazba</h1>
-  <a href="./../../objednano">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání - Objednáno </button></a>
+  <!--<a href="./../../objednano">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání - Objednáno </button></a>-->
   <a href="./../../">        <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
   <a href="./../">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
-  <a href="./../vysledky">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba - Výsledky  </button></a>
+  <!--<a href="./../vysledky">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba - Výsledky  </button></a>-->
   
 <?php
 header("Content-Type: text/html;charset=UTF-8");

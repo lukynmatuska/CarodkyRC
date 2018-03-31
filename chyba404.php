@@ -7,25 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/music.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <title>404 Nenalezeno - Čarodky Rudice</title>
-    <style>
-    html{
-    height: 100%;
-    background-image: URL("./background.jpg");
-    background-color="black";
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-height:auto;*/}
-    </style>
+    <link href="style.css" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- load MUI -->
     <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
     <!--<link href="/mui.min.css" rel="stylesheet" type="text/css" /mu>    -->
     <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
+    <title>404 Nenalezeno - Čarodky Rudice</title>
+    <meta property="og:title" content="404 Nenalezeno - Čarodky Rudice" />
+    <meta property="og:type" content="Error page" />
+    <meta property="og:url" content="https://carodky.buchticka.eu/chyba404.php" />
+    <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
+    <meta property="og:description" content="Error page" />
+    <meta property="fb:app_id" content="" />
+    
   
-  <link rel="stylesheet" type="text/css" href="freecontactform.css">
-    <!-- Matomo -->
+  <!-- Matomo -->
 <script type="text/javascript">
   var _paq = _paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */

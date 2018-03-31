@@ -2,36 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!--<meta charset="iso-8859-2">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="/music.ico" type="image/x-icon">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#c7d5ed">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#c7d5ed">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#c7d5ed"><!--4285f4">-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <title>Písničky na přání - Čarodky Rudice</title>
-    <meta property="og:title" content="Písničky na přání - Čarodky Rudice" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="https://carodky.buchticka.eu/" />
-    <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
-    <meta property="og:description" content="" />
-    <meta property="fb:app_id" content="" />
-    <style>
-    html{
-    height: 100%;
-    background-image: URL("./background.jpg");
-    background-color="black";
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-height:auto;*/}
-    </style>
+    <link href="/style.css" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- load MUI -->
     <link href="//cdn.muicss.com/mui-0.9.30/css/mui.min.css" rel="stylesheet" type="text/css" />
     <!--<link href="/mui.min.css" rel="stylesheet" type="text/css" /mu>    -->
     <script src="//cdn.muicss.com/mui-0.9.30/js/mui.min.js"></script>
+    <title>Písničky na přání - Čarodky Rudice</title>
+    <meta property="og:title" content="Písničky na přání - Čarodky Rudice" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="https://carodky.buchticka.eu/" />
+    <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
+    <meta property="og:description" content="Nechte si zahrát písničku na přání" />
+    <meta property="fb:app_id" content="" />
+    
   
-  <link rel="stylesheet" type="text/css" href="freecontactform.css">
-
   <!-- Matomo -->
 <script type="text/javascript">
   var _paq = _paq || [];
@@ -57,7 +52,7 @@
       <div style="text-align:center">
   <h1 style="text-align:center">Písničky na přání</h1>
   <a href="./"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
-  <a href="./objednano"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>
+  <!--<a href="./objednano"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>-->
   <a href="./zpetnavazba"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
   
   <!--<form class="mui-form" name="freecontactform" method="post" action="freecontactformprocess.php" onsubmit="return validate.check(this)">-->
@@ -94,18 +89,17 @@
 </form>
 
 <!--https://www.youtube.com/watch?time_continue=3&v=5By--1F7bWU -->
-
-
-
-<div class="paticka" style="text-alig: center;">
+ <div class="paticka" style="text-alig: center;">
    <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="https://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
    </p>
    </div>
+
    
    </div>
 </div>
 </div>
-   <div style="text-align: center;"><a href="https://www.toplist.cz"><script language="JavaScript" type="text/javascript">
+   
+  <div style="text-align: center;"><a href="https://www.toplist.cz"><script language="JavaScript" type="text/javascript">
 <!--
 document.write('<img src="https://toplist.cz/count.asp?id=1782012&logo=mc&http='+
 escape(document.referrer)+'&t='+escape(document.title)+
@@ -114,7 +108,6 @@ escape(window.screen.colorDepth)+'" width="88" height="60" border=0 alt="TOPlist
 //--></script><noscript><img src="https://toplist.cz/count.asp?id=1782012&logo=mc" border="0"
 alt="TOPlist" width="88" height="60" /></noscript></a>
 </div>        <a style="color: transparent;" href="https://www.toplist.cz/stat/result/1782012/day-graph/browser/os/entry-page/referrer/resolution/color/country/?day=0">DETAILNÍ STATISTIKY</a>
-
 
     
 </body>
