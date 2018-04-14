@@ -25,6 +25,22 @@
     <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
     <meta property="og:description" content="Nechte si zahrát písničku na přání" />
     <meta property="fb:app_id" content="" />
+    <!-- POPUP WINDOW --><!--
+        <script>
+            window.open('https://carodky.buchticka.eu/countdown','popupad','width=200,height=150')
+        </script> -->
+
+    <!--
+    <script>
+      var newPopup=window.open("","PopupWindow","height=250,width=250");
+      var popContent='<HTML><HEAD><TITLE>GetSmart</TITLE></HEAD><BODY MARGINWIDTH=0 MARGINHEIGHT=0 LEFTMARGIN=0 TOPMARGIN=0 BOTTOMMARGIN=0>';
+      popContent+= '<a target="_blank" href="http://DomainURL"><img src="http://www.yourdomain.com/ads/yourimage.gif" height=250 width=250 border=0></a>';
+      popContent+='</BODY></HTML>';
+      newPopup.document.write(popContent);
+      newPopup.document.close();
+      newPopup.focus();
+    </script> -->
+
     
   
   <!-- Matomo -->
@@ -43,7 +59,7 @@
 </script>
 <!-- End Matomo Code -->
     </head>
-      <body style="background-color: transparent; font-family: Trebuchet MS">
+      <body  onload="window.showModalDialog('https://www.google.com');" style="background-color: transparent; font-family: Trebuchet MS">
       <!-- bgcolor="black" background="background.jpg" bgproperties="scroll" style="height:auto; background-position: center; background-repeat: no-repeat; background-size: cover; background-height:auto;"> -->
 
     <!-- example content -->

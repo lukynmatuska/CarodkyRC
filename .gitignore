@@ -108,4 +108,5 @@ ENV/
 
 error_logs
 dbconnect.php
+dbconnect*.php
 passwordEmail.txt

@@ -1,5 +1,6 @@
 <?php
 include "./dbconnect.php";
+include "./dbconnectFull.php";
 header('Content-Type: text/html; charset=utf-8');
 $badCaptcha = "spatnaRecaptcha.html"; // reCAPTCHA error page
 $thankyou = "diky.html"; // thank you page
@@ -67,6 +68,11 @@ $sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$
 //$sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('Julie', 'Dooley', 'julie@example.com')";
 $conn->query($sql);
 $conn->close();     
+
+$sql2 = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)";
+//$sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('Julie', 'Dooley', 'julie@example.com')";
+$conn2 -> query($sql);
+$conn2 -> close();     
 header("Location: $thankyou");
 }catch(Exception $problem){echo $problem;}
 }else{

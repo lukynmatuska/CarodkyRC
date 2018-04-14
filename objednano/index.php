@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="10;url=http://carodky.buchticka.eu/objednano">
     <link rel="shortcut icon" href="/../favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link href="/../style.css" rel="stylesheet">
@@ -43,10 +44,9 @@
       <div class="mui-panel" >
       <div style="text-align:center">
       <h1 style="text-align:center">Objednáno - Písničky na přání</h1>
-  <a href="./">                         <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání - Objednáno </button></a>
+  <a href="./">                         <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno </button></a>
   <a href="./../">                      <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
   <a href="./../zpetnaVazba">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
-  <a href="./../zpetnaVazba/vysledky">  <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba - Výsledky  </button></a>
   
 <?php
 header("Content-Type: text/html;charset=UTF-8");
@@ -65,9 +65,6 @@ if (!$query) {
   <thead>
     <tr>
       <th style="text-align: center; width: 8%">ID žádosti</th>
-      <th style="text-align: center">Kdo</th>
-      <th style="text-align: center">Komu</th>
-      <th style="text-align: center">Vzkaz</th>
       <th style="text-align: center">Song</th>
       <!--<th style="text-align: center">Hotovo</th>-->
     </tr>
@@ -82,17 +79,7 @@ if (!$query) {
     }echo '
       <tr>
       <td style="text-align: center">'.$row['id_zadosti'].'</td>
-      <td style="text-align: center">'.$row['kdo'].'</td>
-      <td style="text-align: center">'.$row['komu'].'</td>
-      <td style="text-align: center">'.$row['vzkaz'].'</td>
       <td style="text-align: center">'.$row['song'].'</td>
-      <!--<td style="text-align: center">
-      <div class="mui-select">
-      <select name="done" size="1"> 
-            <option value="False">Ne
-            <option value="True">Ano
-      </select></div>
-      '.$done.'</td>-->
       </tr>';
 		}?>
     </tbody>
@@ -100,7 +87,7 @@ if (!$query) {
 </body>
 </html>
 
-<div class="paticka" style="text-alig: center;">
+<div class="paticka" style="text-align: center;">
    <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="https://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
    </p>
    </div>
