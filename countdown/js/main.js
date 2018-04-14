@@ -56,28 +56,65 @@ $(window).load(function(){
 
 
 $('#countdown').countdown({
-	//date: "December 14, 2019 18:03:26",
+	//date: "April 19, 2019 23:09:26",
 	date: "April 30, 2018 19:00:00",
 	//date: "April 13, 2018 19:00:00",
 	render: function(data) {
 	  var el = $(this.el);
-	  el.empty()
-	    //.append("<div>" + this.leadingZeros(data.years, 4) + "<span>years</span></div>")
-	    /*if (data.days == 0) {
-	    	.append("<div>" + this.leadingZeros(data.days, 2) + " <span>dnů</span></div>")
-	    }if (data.days == 1) {
-	    	.append("<div>" + this.leadingZeros(data.days, 2) + " <span>den</span></div>")
-	    }if (data.days == 2) {
-	    	.append("<div>" + this.leadingZeros(data.days, 2) + " <span>dny</span></div>")
-	    }if (data.days == 3) {
-	    	.append("<div>" + this.leadingZeros(data.days, 2) + " <span>dny</span></div>")
-	    }else{
-	    	.append("<div>" + this.leadingZeros(data.days, 2) + " <span>dní</span></div>")
-	    }*/
+	  el.empty();
 
-	    .append("<div>" + this.leadingZeros(data.days, 2) + " <span>dní</span></div>")
-	    .append("<div>" + this.leadingZeros(data.hours, 2) + " <span>hod</span></div>")
-	    .append("<div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div>")
-	    .append("<div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+	  denStr="<span>dní</span></div>";
+	  den=this.leadingZeros(data.days, 2);
+	  if (den === "00") {
+	      denStr="<span>dnů</span></div>";
+	  }else if(den === "01") {
+	      denStr="<span>dnů</span></div>";
+	  }else if  (den === "02"||den === "03"||den === "04") {
+	      denStr="<span>dny</span></div>";
+	  }else{
+	      denStr="<span>dní</span></div>";
+	  }
+
+	  hodStr="<span>hodin</span></div>";
+	  hod=this.leadingZeros(data.hours, 2);
+	  if (hod === "00") {
+	      hodStr="<span>hodin</span></div>";
+	  }else if(hod === "01") {
+          hodStr="<span>hodina</span></div>";
+	  }else if  (hod === "02"||hod === "03"||hod === "04") {
+          hodStr="<span>hodiny</span></div>";
+	  }else{
+          hodStr="<span>hodin</span></div>";
+	  }
+
+	  minStr="<span>minut</span></div>";
+	  min=this.leadingZeros(data.min, 2);
+	  if (min === "00") {
+          minStr="<span>minut</span></div>";
+	  }else if(min === "01") {
+          minStr="<span>minuta</span></div>";
+	  }else if  (min === "02"||min === "03"||min === "04") {
+          minStr="<span>minuty</span></div>";
+	  }else{
+          minStr="<span>minut</span></div>";
+	  }
+
+	  secStr="<span>sekund</span></div>";
+	  sec=this.leadingZeros(data.sec, 2);
+	  if (sec === "00") {
+          secStr="<span>sekund</span></div>";
+	  }else if(sec === "01") {
+          secStr="<span>sekunda</span></div>";
+	  }else if  (sec === "02"||sec === "03"||sec === "04") {
+          secStr="<span>sekundy</span></div>";
+	  }else{
+          secStr="<span>sekund</span></div>";
+	  }
+
+
+	    el.append("<div>" + this.leadingZeros(data.days, 2) + denStr);
+        el.append("<div>" + this.leadingZeros(data.hours, 2) + hodStr);
+        el.append("<div>" + this.leadingZeros(data.min, 2) + minStr);
+        el.append("<div>" + this.leadingZeros(data.sec, 2) + secStr);
 	}
 });
