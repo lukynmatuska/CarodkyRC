@@ -102,7 +102,20 @@ body {font-family: Trebuchet MS, Arial, Helvetica, sans-serif;}
 </script>
 <!-- End Matomo Code -->
     </head>
-      <body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">
+    <?php 
+    if (date('d-m-Y h') != "30-04-2018 19") {
+      # code...
+      //echo '<body style="background-color: transparent; font-family: Trebuchet MS">';
+      echo '<body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">';
+    } else {
+      # code...
+      echo '<body  style="background-color: transparent; font-family: Trebuchet MS">';
+      //echo '<body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">';
+    }
+    
+    //echo time();
+    //echo  date('d-m-Y h'); ?>
+      <!--<body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">-->
 
 
     <div style="width:100%; " class="mui-container">
@@ -110,7 +123,7 @@ body {font-family: Trebuchet MS, Arial, Helvetica, sans-serif;}
       <div style="text-align:center">
   <h1 style="text-align:center">Písničky na přání</h1>
   <a href="./"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
-  <!--<a href="./objednano"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>-->
+  <a href="./objednano"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>
   <a href="./zpetnavazba"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
   <!--<input type="submit" style="display: none;">-->
   <button id="myBtn" style="display: none; margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Odpočet</button>

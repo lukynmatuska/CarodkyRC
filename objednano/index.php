@@ -76,10 +76,35 @@ if (!$query) {
     $done = "Ne";    
     }else{
     $done = "Ano";
-    }echo '
+    }try {
+        $urlArray = explode(" ", $row['song']);
+        
+      } catch (Exception $e) {
+        die(e);
+      }
+      //$song = '<a href="'. /*$row['song'] */ $urlArray[0] .'">'. $row['song'] .'</a>'; //url a za </a> dát normálně vzkaz ;)
+      $song = '';
+      for ($index=0; $index < sizeof($urlArray); $index++) { 
+        # code...
+        if (strpos($urlArray[$index], "http") !== false) {
+            if (strpos($urlArray[$index], "youtube") !== false) {
+              $urlSite = "YouTube";
+            }elseif (strpos($urlArray[$index], "spotify") !== false) {
+              $urlSite = "Spotify";
+            }else{
+              $urlSite = "URL";
+            }
+              $song .= ' <a href="'. $urlArray[$index] .'">' . $urlSite .'</a>';
+
+      }else{
+      $song .= " " . $urlArray[$index]; //$song = $row['song'];
+    }
+    }
+    echo '
       <tr>
       <td style="text-align: center">'.$row['id_zadosti'].'</td>
-      <td style="text-align: center">'.$row['song'].'</td>
+      <td style="text-align: center">'.$song.'</td><!--
+      <td style="text-align: center">'.$row['song'].'</td>-->
       </tr>';
 		}?>
     </tbody>

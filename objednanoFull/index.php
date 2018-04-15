@@ -80,20 +80,37 @@ if (!$queryFull) {
     $done = "Ne";    
     }else{
     $done = "Ano";
-    }echo '
+    }try {
+        $urlArray = explode(" ", $row['song']);
+        
+      } catch (Exception $e) {
+        die(e);
+      }
+      $song = '';
+      for ($index=0; $index < sizeof($urlArray); $index++) { 
+        # code...
+        if (strpos($urlArray[$index], "http") !== false) {
+            if (strpos($urlArray[$index], "youtube") !== false) {
+              $urlSite = "YouTube";
+            }elseif (strpos($urlArray[$index], "spotify") !== false) {
+              $urlSite = "Spotify";
+            }else{
+              $urlSite = "URL";
+            }
+              $song .= ' <a href="'. $urlArray[$index] .'">' . $urlSite .'</a>';
+
+      }else{
+      $song .= " " . $urlArray[$index]; //$song = $row['song'];
+    }
+    }
+    echo '
       <tr>
       <td style="text-align: center">'.$row['id_zadosti'].'</td>
       <td style="text-align: center">'.$row['kdo'].'</td>
       <td style="text-align: center">'.$row['komu'].'</td>
       <td style="text-align: center">'.$row['vzkaz'].'</td>
-      <td style="text-align: center">'.$row['song'].'</td>
-      <!--<td style="text-align: center">
-      <div class="mui-select">
-      <select name="done" size="1"> 
-            <option value="False">Ne
-            <option value="True">Ano
-      </select></div>
-      '.$done.'</td>-->
+      <td style="text-align: center">'.$song.'</td><!--
+      <td style="text-align: center">'.$row['song'].'</td>-->
       </tr>';
 		}?>
     </tbody>

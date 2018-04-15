@@ -112,14 +112,10 @@ $('#countdown').countdown({
 	  }
 
 	  	denMezera = "&nbsp;".repeat((data.days.toString().length)/2)
-		hodMezera = "&nbsp;".repeat((data.hours.toString().length)/2)
-		minMezera = "&nbsp;".repeat((data.min.toString().length)/2)
-
-
-
+	  	
 	    el.append("<div>" + this.leadingZeros(data.days, 2) + denMezera + denStr);
-        el.append("<div>" + this.leadingZeros(data.hours, 2) + hodMezera + hodStr);
-        el.append("<div>" + this.leadingZeros(data.min, 2) + minMezera + minStr);
+        el.append("<div>" + this.leadingZeros(data.hours, 2) + hodStr);
+        el.append("<div>" + this.leadingZeros(data.min, 2) + minStr);
         el.append("<div>" + this.leadingZeros(data.sec, 2) + secStr);
 	}
 });
