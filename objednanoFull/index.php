@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="refresh" content="10;url=http://carodky.buchticka.eu/objednano">
+    <meta http-equiv="refresh" content="10;url=./">
     <link rel="shortcut icon" href="/../favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link href="/../style.css" rel="stylesheet">
@@ -51,14 +51,14 @@
   
 <?php
 header("Content-Type: text/html;charset=UTF-8");
-include "./../dbconnect.php";
-mysqli_query($conn, "SET NAMES 'UTF-8'");
-$sql = 'SELECT * 
+include "./../dbconnectFull.php";
+mysqli_query($connFull, "SET NAMES 'UTF-8'");
+$sqlFull = 'SELECT * 
 		FROM pisnicky_na_prani';
-$query = mysqli_query($conn, $sql);
+$queryFull = mysqli_query($connFull, $sqlFull);
 
-if (!$query) {
-	die ('SQL Error: ' . mysqli_error($conn));
+if (!$queryFull) {
+	die ('SQL Error: ' . mysqli_error($connFull));
 }
 ?>
  
@@ -75,7 +75,7 @@ if (!$query) {
   </thead>
   <tbody>
   <?php
-		while ($row = mysqli_fetch_array($query))
+		while ($row = mysqli_fetch_array($queryFull))
 		{if($row['hotovo'] == 0){
     $done = "Ne";    
     }else{

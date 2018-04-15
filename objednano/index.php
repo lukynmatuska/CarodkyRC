@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="refresh" content="10;url=http://carodky.buchticka.eu/objednano">
+    <meta http-equiv="refresh" content="10;url=./">
     <link rel="shortcut icon" href="/../favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link href="/../style.css" rel="stylesheet">

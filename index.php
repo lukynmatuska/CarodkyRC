@@ -25,6 +25,49 @@
     <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
     <meta property="og:description" content="Nechte si zahrát písničku na přání" />
     <meta property="fb:app_id" content="" />
+
+    <style>
+body {font-family: Trebuchet MS, Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 5%; /* 100px Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: transparent; /* #fefefe; */
+    margin: auto;
+    padding: 20px; /* 20px */
+    /* border: 1px solid #888; */
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
     <!-- POPUP WINDOW --><!--
         <script>
             window.open('https://carodky.buchticka.eu/countdown','popupad','width=200,height=150')
@@ -59,10 +102,9 @@
 </script>
 <!-- End Matomo Code -->
     </head>
-      <body  onload="window.showModalDialog('https://www.google.com');" style="background-color: transparent; font-family: Trebuchet MS">
-      <!-- bgcolor="black" background="background.jpg" bgproperties="scroll" style="height:auto; background-position: center; background-repeat: no-repeat; background-size: cover; background-height:auto;"> -->
+      <body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">
 
-    <!-- example content -->
+
     <div style="width:100%; " class="mui-container">
       <div class="mui-panel" >
       <div style="text-align:center">
@@ -70,6 +112,11 @@
   <a href="./"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
   <!--<a href="./objednano"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>-->
   <a href="./zpetnavazba"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+  <!--<input type="submit" style="display: none;">-->
+  <button id="myBtn" style="display: none; margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Odpočet</button>
+
+  <!-- Trigger/Open The Modal --><!--
+<button id="myBtn">Open Modal</button>-->
   
   <!--<form class="mui-form" name="freecontactform" method="post" action="freecontactformprocess.php" onsubmit="return validate.check(this)">-->
   <form class="mui-form" name="freecontactform" method="post" action="run.php" onsubmit="return validate.check(this)">
@@ -103,6 +150,8 @@
   <button  type="submit" class="mui-btn mui-btn--primary mui-btn--raised">Odeslat</button>
                            </div>
 </form>
+<br>
+<p style="text-align: center; font-size: 95%; border=0%; padding=0%">Odeslání formuláře může chvíli trvat.</p>
 
 <!--https://www.youtube.com/watch?time_continue=3&v=5By--1F7bWU -->
  <div class="paticka" style="text-alig: center;">
@@ -125,6 +174,54 @@ escape(window.screen.colorDepth)+'" width="88" height="60" border=0 alt="TOPlist
 alt="TOPlist" width="88" height="60" /></noscript></a>
 </div>        <a style="color: transparent;" href="https://www.toplist.cz/stat/result/1782012/day-graph/browser/os/entry-page/referrer/resolution/color/country/?day=0">DETAILNÍ STATISTIKY</a>
 
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+      <!-- Modal content -->
+  <div class="modal-content" style=" width: 75%; height: 75%;">
+    <span class="close">&times;</span>
+    <!-- <p>Some text in the Modal..</p> -->
+    <iframe src="countdown/index.html" width="100%" height="95%" frameborder="0" align="baseline" scrolling="no" name="ramecek"></iframe>
+
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+/*
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+        // <DO YOUR WORK HERE>
+        modal.style.display = "none";
+    }
+});*/
+</script>
     
 </body>
 </html>

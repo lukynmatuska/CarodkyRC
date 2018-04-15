@@ -41,6 +41,7 @@ if(isset($_POST['song'])){
     } else{
     $message .= "Vzkaz od: Nezadáno\n";
     }}
+    }
     $song = $_POST['song'];
     $message .= "Písnička:".$_POST['song'] ."\n";
     $message .= "\n\nNapsala Lukynova Buchtička :)\n"; //$message .= "\n\nNapsala Lukynova Buchtička :)\n";
@@ -59,30 +60,25 @@ if(isset($_POST['song'])){
     mail($to, $s, $body, $headers);
 }
 if(isset($_POST['song'])){
-if($captcha and strlen($_POST['song']) > 1){
+if($captcha /* and strlen($_POST['song']) > 1 */){
 try{
 utf8mail($to,$subject,$message, "BUCHTICKA WEBSITES"/*"buchticka.eu@gmail.com"*/, "IDK"/*$email_from*/, "CarodkyRC@seznam.cz"); 
-//$sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES('$kdo, $komu, $vzkaz, $song, 0')";
-/*FUNGUJE*///$sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('Julie', 'Dooley', 'Miluju purkynku', 'Purkyňka je HAPPY!', 0)";
+
+#$sql = mysql_real_escape_string("INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)");
 $sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)";
-//$sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('Julie', 'Dooley', 'julie@example.com')";
+
 $conn->query($sql);
-$conn->close();     
+$conn->close();  
 
-$sql2 = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)";
-//$sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('Julie', 'Dooley', 'julie@example.com')";
-$conn2 -> query($sql);
-$conn2 -> close();     
+$sqlFull = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)";
+$connFull -> query($sqlFull);
+$connFull -> close();  
+
 header("Location: $thankyou");
-}catch(Exception $problem){echo $problem;}
-}else{
-echo $problem;
-}
-}
+}catch(Exception $problem){
+    echo $problem;}
+}}
 
-//echo "Mail Sent. Thank you ";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    // You cannot use header and echo together. It's one or the other.
-    }
+    
 
 ?>

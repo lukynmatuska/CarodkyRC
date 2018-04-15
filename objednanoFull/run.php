@@ -3,14 +3,14 @@ include "./../dbconnectFull.php";
 header('Content-Type: text/html; charset=utf-8');
 
 function dbWrite($conn, $vzkaz="Nezadano"){
-  $sql = "SET NAMES utf8";
-  if($conn->query($sql)===TRUE){
+  $sqlFull = "SET NAMES utf8";
+  if($connFull->query($sqlFull)===TRUE){
       echo "utf8 OK<br/>";
   }else{
       echo "utf8 NOK<br/>";
   } 
-  $sql = "INSERT INTO objednano(vzkaz_zpetne_vazby) VALUES('$vzkaz')"; 
-  if($conn->query($sql)===TRUE){
+  $sqlFull = "INSERT INTO objednano(vzkaz_zpetne_vazby) VALUES('$vzkaz')"; 
+  if($connFull->query($sqlFull)===TRUE){
       echo "inserted data<br/>";
   }else{
       echo "failed<br/>";
@@ -39,8 +39,8 @@ if(isset($_POST['naPresun'])){
 if(isset($_POST['zpetnaVazba'])){
 try{
 utf8mail($to,$subject,$message, "BUCHTICKA WEBSITES"/*"buchticka.eu@gmail.com"*/, "IDK"/*$email_from*/, "CarodkyRC@seznam.cz");
-dbWrite($conn, $_POST['zpetnaVazba']);
-$conn->close(); 
+dbWrite($connFull, $_POST['zpetnaVazba']);
+$connFull->close(); 
 header("Location: dikyZVazba.html");
 }
 catch(Exception $problem){echo $problem;}
