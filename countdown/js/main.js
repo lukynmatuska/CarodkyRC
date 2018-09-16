@@ -56,9 +56,8 @@ $(window).load(function(){
 
 
 $('#countdown').countdown({
-	//date: "April 19, 2019 23:09:26",
-	date: "April 30, 2018 19:00:00",
-	//date: "April 13, 2018 19:00:00",
+	//date: "April 30, 2019 20:00:00",
+	date: "April 30, 2019 21:00:00",
 	render: function(data) {
 	  var el = $(this.el);
 	  el.empty();

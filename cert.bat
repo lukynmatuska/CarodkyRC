@@ -1,0 +1,1 @@
+letsencrypt.exe --accepttos --manualhost carodky.buchticka.eu --webroot C:\xampp\htdocs\carodky\ --hidehttps

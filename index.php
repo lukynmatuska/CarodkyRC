@@ -68,22 +68,7 @@ body {font-family: Trebuchet MS, Arial, Helvetica, sans-serif;}
     cursor: pointer;
 }
 </style>
-    <!-- POPUP WINDOW --><!--
-        <script>
-            window.open('https://carodky.buchticka.eu/countdown','popupad','width=200,height=150')
-        </script> -->
-
-    <!--
-    <script>
-      var newPopup=window.open("","PopupWindow","height=250,width=250");
-      var popContent='<HTML><HEAD><TITLE>GetSmart</TITLE></HEAD><BODY MARGINWIDTH=0 MARGINHEIGHT=0 LEFTMARGIN=0 TOPMARGIN=0 BOTTOMMARGIN=0>';
-      popContent+= '<a target="_blank" href="http://DomainURL"><img src="http://www.yourdomain.com/ads/yourimage.gif" height=250 width=250 border=0></a>';
-      popContent+='</BODY></HTML>';
-      newPopup.document.write(popContent);
-      newPopup.document.close();
-      newPopup.focus();
-    </script> -->
-
+  
     
   
   <!-- Matomo -->
@@ -102,71 +87,57 @@ body {font-family: Trebuchet MS, Arial, Helvetica, sans-serif;}
 </script>
 <!-- End Matomo Code -->
     </head>
-    <?php 
-    if (date('d-m-Y h') != "30-04-2018 19") {
-      # code...
-      //echo '<body style="background-color: transparent; font-family: Trebuchet MS">';
-      echo '<body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">';
-    } else {
-      # code...
-      echo '<body  style="background-color: transparent; font-family: Trebuchet MS">';
-      //echo '<body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">';
-    }
     
-    //echo time();
-    //echo  date('d-m-Y h'); ?>
-      <!--<body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">-->
-
+      <body  onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">
+<!--<body  style="background-color: transparent; font-family: Trebuchet MS">-->
 
     <div style="width:100%; " class="mui-container">
       <div class="mui-panel" >
       <div style="text-align:center">
   <h1 style="text-align:center">Písničky na přání</h1>
-  <a href="./"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
-  <a href="./objednano"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>
-  <a href="./zpetnavazba"><button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+  <div style="margin-bottom: 2%; ">
+  <a href="./">           <button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
+  <a href="./objednano">  <button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Objednáno</button></a>
+  <a href="./zpetnavazba"><button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+  <a href="./plakat">     <button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Plakát  </button></a>
   <!--<input type="submit" style="display: none;">-->
-  <button id="myBtn" style="display: none; margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Odpočet</button>
+  <button id="myBtn" style="display: none; margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Odpočet</button>
+  </div>
+
 
   <!-- Trigger/Open The Modal --><!--
 <button id="myBtn">Open Modal</button>-->
   
   <!--<form class="mui-form" name="freecontactform" method="post" action="freecontactformprocess.php" onsubmit="return validate.check(this)">-->
-  <form class="mui-form" name="freecontactform" method="post" action="run.php" onsubmit="return validate.check(this)">
-  <!--<legend><h1 style="text-align:center">Písničky na přání</h1></legend>-->
-  
-  
+  <!-- <form class="mui-form" name="freecontactform" method="post" action="run.php" onsubmit="return validate.check(this)">-->
+  <form class="mui-form" method="post" action="run.php">
   <div class="mui-textfield  mui-textfield--float-label">
-    <input type="text" name="OdKoho" id="OdKoho"><!--placeholder="Od koho je přání?">-->
-    <label style="text-align: left">Od koho je přání?</label>
+    <input type="text" name="OdKoho" id="OdKoho">
+    <label style="text-align: left; ">Od koho je přání?</label>
   </div>
   <div class="mui-textfield  mui-textfield--float-label">
-    <input type="text" name="ProKoho" id="ProKoho"><!--placeholder="Pro koho je přání?">-->
-    <label style="text-align: left">Pro koho je přání?</label>
+    <input type="text" name="ProKoho" id="ProKoho">
+    <label style="text-align: left; ">Pro koho je přání?</label>
   </div>
   <div class="mui-textfield mui-textfield--float-label">
-    <input type="text" name="Vzkaz" id="Vzkaz"><!--placeholder="Nějaký (veřejný) vzkaz? (Pro * k narozeninám / Jen tak do fronty)">-->
-    <label style="text-align: left">Nějaký (veřejný) vzkaz? (K narozeninám / Jen tak do fronty)</label>
+    <input type="text" name="Vzkaz" id="Vzkaz">
+    <label style="text-align: left; ">Nějaký (veřejný) vzkaz? (K narozeninám / Jen tak do fronty)</label>
   </div>
   <div class="mui-textfield mui-textfield--float-label">
-    <!--<textarea placeholder="Odkaz na písničku:"></textarea>-->
-    <!--<input type="text" name="song" id="song" placeholder="Jméno písničky / odkaz na Spotify / YouTube, atd.">-->
-    <input type="text" name="song" id="song" required ><!--placeholder="Jméno písničky / odkaz na Spotify / YouTube, atd.">-->
-    <label style="text-align: left">Jméno písničky / odkaz na Spotify / YouTube, atd.</label>
+    <input type="text" name="song" id="song" required >
+    <label style="text-align: left; ">Jméno písničky <b style="color: red; ">*</b> / odkaz na Spotify / YouTube, atd.</label>
   </div>                        
-  <!--<div class="mui-textfield">
-    <input type="text" name="AntiSpam" id="AntiSpam" placeholder="Napiš sem číslo 25">
-    </div>-->
-  <!--<button type="submit" class="mui-btn mui-btn--raised">Submit</button>-->
-  <div style="text-align: center; /*display: inline-block; */s">
-  <div class="g-recaptcha" data-sitekey="6Ld1l0AUAAAAAEU00Mds60evT-RIID6_37V9UYX2"></div>
-  <button  type="submit" class="mui-btn mui-btn--primary mui-btn--raised">Odeslat</button>
-                           </div>
+  <!--<div style="text-align: center; ">-->
+    <label style="border-bottom: 5px solid transparent; text-align: left; float: left;">Ověření ReCaptcha: <b style="color: red; ">*</b></label>
+    <br>
+    <div style="border-bottom: 10px solid transparent; " class="g-recaptcha" data-sitekey="6Ld1l0AUAAAAAEU00Mds60evT-RIID6_37V9UYX2"></div>
+    <button  type="submit" class="mui-btn mui-btn--primary mui-btn--raised">Odeslat</button>
+  <!--</div>-->
 </form>
 <br>
-<p style="text-align: center; font-size: 95%; border=0%; padding=0%">Odeslání formuláře může chvíli trvat.</p>
+<p style="text-align: center; font-size: 100%; border=0%; padding=0%"><b style="text-align: left; color: red; ">* </b> Povinné pole</p>
+<p style="text-align: center; font-size: 85%; border=0%; padding=0%">Odeslání formuláře může chvíli trvat.</p>
 
-<!--https://www.youtube.com/watch?time_continue=3&v=5By--1F7bWU -->
  <div class="paticka" style="text-alig: center;">
    <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="https://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
    </p>
@@ -227,13 +198,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-/*
-$(document).keyup(function(e) {
-     if (e.keyCode == 27) { // escape key maps to keycode `27`
-        // <DO YOUR WORK HERE>
-        modal.style.display = "none";
-    }
-});*/
 </script>
     
 </body>

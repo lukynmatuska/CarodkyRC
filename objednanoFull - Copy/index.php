@@ -10,7 +10,7 @@
     <meta name="msapplication-navbutton-color" content="#c7d5ed">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#c7d5ed"><!--4285f4">-->
-    <meta http-equiv="refresh" content="300;url=./">
+    <meta http-equiv="refresh" content="10;url=./">
     <link rel="shortcut icon" href="/../favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link href="/../style.css" rel="stylesheet">
@@ -56,7 +56,6 @@
   <a href="./../zpetnaVazba/vysledky">  <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba - Výsledky  </button></a>
   
 <?php
-/*
 header("Content-Type: text/html;charset=UTF-8");
 include "./../dbconnectFull.php";
 mysqli_query($connFull, "SET NAMES 'UTF-8'");
@@ -66,33 +65,7 @@ $queryFull = mysqli_query($connFull, $sqlFull);
 
 if (!$queryFull) {
 	die ('SQL Error: ' . mysqli_error($connFull));
-}*/
-
-header("Content-Type: text/html;charset=UTF-8");
-include "./../dbconnect.php";
-mysqli_query($conn, "SET NAMES 'UTF-8'");
-$sql = 'SELECT * 
-    FROM pisnicky_na_prani';
-$query = mysqli_query($conn, $sql);
-
-if (!$query) {
-  die ('SQL Error: ' . mysqli_error($conn));
 }
-
-function page_title($url) {
-        $fp = file_get_contents($url);
-        if (!$fp) 
-            return null;
-
-        $res = preg_match("/<title>(.*)<\/title>/siU", $fp, $title_matches);
-        if (!$res) 
-            return null; 
-
-        // Clean up title: remove EOL's and excessive whitespace.
-        $title = preg_replace('/\s+/', ' ', $title_matches[1]);
-        $title = trim($title);
-        return $title;
-    }
 ?>
  
 		<table class="mui-table mui-table--bordered">
@@ -108,9 +81,8 @@ function page_title($url) {
   </thead>
   <tbody>
   <?php
-		//while ($row = mysqli_fetch_array($queryFull))
-    while ($row = mysqli_fetch_array($query))
-    {if($row['hotovo'] == 0){
+		while ($row = mysqli_fetch_array($queryFull))
+		{if($row['hotovo'] == 0){
     $done = "Ne";    
     }else{
     $done = "Ano";
@@ -120,11 +92,10 @@ function page_title($url) {
       } catch (Exception $e) {
         die(e);
       }
-      /*$song = '';
+      $song = '';
       for ($index=0; $index < sizeof($urlArray); $index++) { 
         # code...
         if (strpos($urlArray[$index], "http") !== false) {
-            $urlTitle = page_title($urlArray[$index]);
             if (strpos($urlArray[$index], "youtube") !== false) {
               $urlSite = "YouTube";
             }elseif (strpos($urlArray[$index], "spotify") !== false) {
@@ -137,35 +108,15 @@ function page_title($url) {
       }else{
       $song .= " " . $urlArray[$index]; //$song = $row['song'];
     }
-    }*/
-    $song = '';
-      for ($index=0; $index < sizeof($urlArray); $index++) { 
-        # code...
-        if (strpos($urlArray[$index], "http") !== false) {
-            $urlTitle = page_title($urlArray[$index]);
-            if (strpos($urlArray[$index], "youtube") !== false) {
-              $urlSite = "YouTube";
-            }elseif (strpos($urlArray[$index], "spotify") !== false) {
-              $urlSite = "Spotify";
-            }else{
-              $urlSite = "URL";
-            }
-              $song .= ' <a href="'. $urlArray[$index] .'">' . /*$urlSite*/ $urlTitle .'</a>';
-
-      }else{
-        $urlTitle = "";
-      $song .= " " . $urlArray[$index]; //$song = $row['song'];
     }
-    }
-    
     echo '
       <tr>
       <td style="text-align: center">'.$row['id_zadosti'].'</td>
       <td style="text-align: center">'.$row['kdo'].'</td>
       <td style="text-align: center">'.$row['komu'].'</td>
       <td style="text-align: center">'.$row['vzkaz'].'</td>
-      <td style="text-align: center">'.$song.'</td>
-  <!--<td style="text-align: center">'.$row['song'].'</td>-->
+      <td style="text-align: center">'.$song.'</td><!--
+      <td style="text-align: center">'.$row['song'].'</td>-->
       </tr>';
 		}?>
     </tbody>

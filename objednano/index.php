@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="refresh" content="10;url=./">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#c7d5ed">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#c7d5ed">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#c7d5ed"><!--4285f4">-->
+    <!--<meta http-equiv="refresh" content="10;url=./">-->
     <link rel="shortcut icon" href="/../favicon.ico" type="image/x-icon">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link href="/../style.css" rel="stylesheet">
@@ -44,9 +50,12 @@
       <div class="mui-panel" >
       <div style="text-align:center">
       <h1 style="text-align:center">Objednáno - Písničky na přání</h1>
-  <a href="./">                         <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Objednáno </button></a>
-  <a href="./../">                      <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
-  <a href="./../zpetnaVazba">           <button style="margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;" class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba  </button></a>
+      <div style="margin-bottom: 2%; ">
+  <a href="./../">           <button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Přání  </button></a>
+  <a href="./">              <button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Objednáno </button></a>
+  <a href="./../zpetnaVazba"><button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Zpětná vazba</button></a>
+  <a href="./../plakat">           <button style="margin-left:auto; margin-right:auto; margin-top:auto; " class="mui-btn mui-btn--primary mui-btn--raised">Plakát  </button></a>
+</div>
   
 <?php
 header("Content-Type: text/html;charset=UTF-8");
@@ -59,6 +68,21 @@ $query = mysqli_query($conn, $sql);
 if (!$query) {
 	die ('SQL Error: ' . mysqli_error($conn));
 }
+
+function page_title($url) {
+        $fp = file_get_contents($url);
+        if (!$fp) 
+            return null;
+
+        $res = preg_match("/<title>(.*)<\/title>/siU", $fp, $title_matches);
+        if (!$res) 
+            return null; 
+
+        // Clean up title: remove EOL's and excessive whitespace.
+        $title = preg_replace('/\s+/', ' ', $title_matches[1]);
+        $title = trim($title);
+        return $title;
+    }
 ?>
  
 		<table class="mui-table mui-table--bordered">
@@ -87,6 +111,7 @@ if (!$query) {
       for ($index=0; $index < sizeof($urlArray); $index++) { 
         # code...
         if (strpos($urlArray[$index], "http") !== false) {
+            $urlTitle = page_title($urlArray[$index]);
             if (strpos($urlArray[$index], "youtube") !== false) {
               $urlSite = "YouTube";
             }elseif (strpos($urlArray[$index], "spotify") !== false) {
@@ -94,24 +119,23 @@ if (!$query) {
             }else{
               $urlSite = "URL";
             }
-              $song .= ' <a href="'. $urlArray[$index] .'">' . $urlSite .'</a>';
+              $song .= ' <a href="'. $urlArray[$index] .'">' . /*$urlSite*/ $urlTitle .'</a>';
 
       }else{
+        $urlTitle = "";
       $song .= " " . $urlArray[$index]; //$song = $row['song'];
     }
     }
     echo '
       <tr>
       <td style="text-align: center">'.$row['id_zadosti'].'</td>
-      <td style="text-align: center">'.$song.'</td><!--
-      <td style="text-align: center">'.$row['song'].'</td>-->
+      <td style="text-align: center">'.$song . '</td>
+  <!--<td style="text-align: center">'.$row['song'].'</td>-->
       </tr>';
 		}?>
     </tbody>
 </table>
-</body>
-</html>
-
+<p>Mohou chybět vymazané žádosti.</p>
 <div class="paticka" style="text-align: center;">
    <hr ><p style="text-align: center; font-size: 75%; border=0%; padding=0%"> Copyright &copy; 2018, <a href="https://buchticka.eu">Buchticka.eu</a> Team <!--<a href="mailto:posta@buchticka.eu" class="blind">posta@buchticka.eu</a>-->
    </p>

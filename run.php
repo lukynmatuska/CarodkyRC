@@ -49,8 +49,7 @@ if(isset($_POST['song'])){
     $headers = "From: CARODKY.BUCHTICKA.EU"/* . $from*/;
     //mail($to,$subject,$message,$headers);
        
-    function utf8mail($to,$s,$body,$from_name="x",$from_a = "buchticka.eu@gmail.com", $reply="CarodkyRC@seznam.cz")
-{
+function utf8mail($to,$s,$body,$from_name="x",$from_a = "buchticka.eu@gmail.com", $reply="CarodkyRC@seznam.cz"){
     $s= "=?utf-8?b?".base64_encode($s)."?=";
     $headers = "MIME-Version: 1.0\r\n";
     $headers.= "From: =?utf-8?b?".base64_encode($from_name)."?= <".$from_a.">\r\n";
