@@ -1,0 +1,17 @@
+html{
+    height: 100%;
+    background-image: URL("/images/background.jpg");
+    background-color: black;
+    background-position: center;
+    background-repeat: repeat;
+    /*background-size: cover;*/
+    background-height: auto;
+}
+
+body {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+    background-color: transparent;
+}
+.mui-panel{
+	background-color: rgba(255, 255, 255, 0.8);
+}

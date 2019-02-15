@@ -1,0 +1,116 @@
+<?php  include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/header.php'; ?>
+        <title>Objednáno - Písničky na přání - Čarodky Rudice</title>
+        <meta property="og:title" content="Objednáno - Čarodky Rudice" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://carodky.buchticka.eu/objednano" />
+        <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
+        <meta property="og:description" content="Výpis žádostí o přehrání písničky" />
+        <meta property="fb:app_id" content="" />
+    </head>
+    <body style="background-color: transparent; font-family: Trebuchet MS;">
+        <div class="mui-container">
+          <div class="mui-panel" style="text-align:center">
+	        <h1 style="text-align:center">Objednáno</h1>
+    		<?php  include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/menu.php'; ?>
+
+<?php
+	header("Content-Type: text/html;charset=UTF-8");
+	include realpath($_SERVER['DOCUMENT_ROOT'])."/dbConnect.php";
+	mysqli_query($conn, "SET NAMES 'UTF-8'");
+	$sql = "SELECT * 
+		FROM pisnicky_na_prani";
+	$query = mysqli_query($conn, $sql);
+	
+	if (!$query) {
+		die ('SQL Error: ' . mysqli_error($conn));
+	}
+
+function page_title($url) {
+        $fp = file_get_contents($url);
+        if (!$fp) 
+            return null;
+
+        $res = preg_match("/<title>(.*)<\/title>/siU", $fp, $title_matches);
+        if (!$res) 
+            return null; 
+
+        // Clean up title: remove EOL's and excessive whitespace.
+        $title = preg_replace('/\s+/', ' ', $title_matches[1]);
+        $title = trim($title);
+        return $title;
+    }
+?>
+            <h4>Legenda:</h4>
+            <table align="center" width="100%">
+                <tr align="center">
+                    <td align="center"><i class='em em-white_check_mark'></i>&nbsp;Odehráno</td>
+                </tr>
+                <tr align="center">
+                  <td align="center"><i class='em em-red_circle'></i>&nbsp;Neodehráno</td>
+                </tr>
+                <tr align="center">
+                   <td align="center"><i class='em em-no_pedestrians'></i>&nbsp;Nepřijmutá&nbsp;žádost</td>
+                </tr>
+            </table>
+            <table class="mui-table mui-table--bordered">
+                <thead>
+                    <tr>
+                          <th style="text-align: left; width: 90px; ">ID žádosti</th>
+                          <th style="text-align: left;              ">Song</th>
+                          <th style="text-align: left; width: 25px; ">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+<?php
+    while ($row = mysqli_fetch_array($query)){
+        if($row['hotovo'] == 0){
+            $done = "Ne";
+        }else{
+            $done = "Ano";
+        }try{
+            $urlArray = explode(" ", $row['song']);
+        }catch (Exception $e){
+             die(e);
+        }
+        //$song = '<a href="'. /*$row['song'] */ $urlArray[0] .'">'. $row['song'] .'</a>'; //url a za </a> dát normálně vzkaz ;)
+        $song = '';
+        for ($index=0; $index < sizeof($urlArray); $index++) {
+            if (strpos($urlArray[$index], "http") !== false){
+                $urlTitle = page_title($urlArray[$index]);
+                if (strpos($urlArray[$index], "youtube") !== false) {
+                    $urlSite = "YouTube";
+                }elseif (strpos($urlArray[$index], "spotify") !== false) {
+                    $urlSite = "Spotify";
+                }else{
+                    $urlSite = "URL";
+                }
+                $song .= ' <a href="'. $urlArray[$index] .'">' . /*$urlSite*/ $urlTitle .'</a>';
+            }else{
+                $urlTitle = "";
+                $song .= " " . $urlArray[$index]; //$song = $row['song'];
+            }
+        }
+        echo "
+                  <tr>
+                      <td style='text-align: center'>".$row['id_zadosti'].  "</td>
+                      <td style='text-align: left'  >".$song .              "</td>
+                      <td style='text-align: center'>";
+        if($row['hotovo'] == "true"){
+            echo "<i class='em em-white_check_mark'></i>";
+        }elseif ($row['hotovo'] == "cancelled"){
+            echo "<i class='em em-no_pedestrians'></i>";
+        }else{
+            echo "<i class='em em-red_circle'></i>";
+        }echo "</td>
+           </tr>";
+    }
+?>
+
+                </tbody>
+            </table>
+            <p>Mohou chybět vymazané žádosti.</p>
+            <?php  include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/footer.php'; ?>
+            </div>
+        </div>
+    </body>
+</html>
