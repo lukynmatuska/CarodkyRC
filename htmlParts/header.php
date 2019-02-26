@@ -6,6 +6,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="keywords" content="Mikulášské odpoledne Rudice, Mikulášské odpoledne, Rudice">
+        <meta name="author" content="Lukáš Matuška">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Chrome, Firefox OS and Opera -->
@@ -14,15 +16,26 @@
         <meta name="msapplication-navbutton-color" content="<?php print($themeColor); ?> ">
         <!-- iOS Safari -->
         <meta name="apple-mobile-web-app-status-bar-style" content="<?php print($themeColor); ?> ">
-        <!-- Google ReCaptcha -->
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-        <!-- load MUI -->
-        <link href="/css/mui.min.css" rel="stylesheet" type="text/css" />
-        <script src="/js/mui.min.js"></script>
-        <!-- other styles -->
-        <link href="/css/style.css" rel="stylesheet">
+        <!-- SHARING -->
+        <meta property="og:url" content="<?php echo 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>" />
+        
+        <!-- load CSSs -->
+        <!-- MUI -->
+        <link href="/css/mui.css" type="text/css" rel="stylesheet"/>
+        <script src="/js/mui.js"></script>
+        <!-- My style -->
+        <link href="/css/style.css" type="text/css" rel="stylesheet"/>
+        <!-- Emoji -->
         <link href="/css/emoji.css" rel="stylesheet">
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">    
         <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-        <!-- Sharing -->
-        <meta property="og:url" content=<?php echo '"'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'].'"'; ?>/>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- GOOGLE ADS (musím se nějak živit ;) )-->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-2871796742628923",
+                enable_page_level_ads: true
+            });
+        </script>
+        
