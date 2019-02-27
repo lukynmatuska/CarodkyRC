@@ -1,3 +1,8 @@
+@font-face{
+    font-family: 'Trebuchet MS';
+    src: url('/fonts/TrebuchetMS.ttf');
+}
+
 html{
     height: 100%;
     background-image: URL("/images/background.jpg");
