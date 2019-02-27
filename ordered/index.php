@@ -43,13 +43,16 @@ function page_title($url) {
             <h4>Legenda:</h4>
             <table align="center" width="100%">
                 <tr align="center">
-                    <td align="center"><i class='em em-white_check_mark'></i>&nbsp;Odehráno</td>
+                    <td align="right" width="50%"><i class='em em-white_check_mark'></i></td>
+                    <td align="left"  width="50%">Odehráno</td>
                 </tr>
                 <tr align="center">
-                  <td align="center"><i class='em em-red_circle'></i>&nbsp;Neodehráno</td>
+                    <td align="right" width="50%"><i class='em em-red_circle'></i></td>
+                    <td align="left"  width="50%">Neodehráno</td>
                 </tr>
                 <tr align="center">
-                   <td align="center"><i class='em em-no_pedestrians'></i>&nbsp;Nepřijmutá&nbsp;žádost</td>
+                    <td align="right" width="50%"><i class='em em-no_pedestrians'></i></td>
+                    <td align="left"  width="50%">Nepřijmutá&nbsp;žádost</td>
                 </tr>
             </table>
             <table class="mui-table mui-table--bordered">
@@ -63,11 +66,7 @@ function page_title($url) {
                 <tbody>
 <?php
     while ($row = mysqli_fetch_array($query)){
-        if($row['hotovo'] == 0){
-            $done = "Ne";
-        }else{
-            $done = "Ano";
-        }try{
+        try{
             $urlArray = explode(" ", $row['song']);
         }catch (Exception $e){
              die(e);
@@ -95,12 +94,16 @@ function page_title($url) {
                       <td style='text-align: center'>".$row['id_zadosti'].  "</td>
                       <td style='text-align: left'  >".$song .              "</td>
                       <td style='text-align: center'>";
-        if($row['hotovo'] == "true"){
-            echo "<i class='em em-white_check_mark'></i>";
-        }elseif ($row['hotovo'] == "cancelled"){
-            echo "<i class='em em-no_pedestrians'></i>";
-        }else{
-            echo "<i class='em em-red_circle'></i>";
+        switch($row['status']) {
+            case true:
+                echo "<i class='em em-white_check_mark'></i>";
+                break;
+            case "cancelled":
+                echo "<i class='em em-no_pedestrians'></i>";
+                break;
+            default:
+                echo "<i class='em em-red_circle'></i>";
+                break;
         }echo "</td>
            </tr>";
     }

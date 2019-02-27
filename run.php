@@ -11,6 +11,10 @@
     }
 
     include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/header.php';
+?>
+    <h1>Vyhodnocení formuláře</h1>
+<?php
+    include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/menu.php';
     include realpath($_SERVER['DOCUMENT_ROOT']).'/dbConnect.php';
     header('Content-Type: text/html; charset=utf-8');
     $badCaptcha = "badRecaptcha.php"; // reCAPTCHA error page
@@ -64,16 +68,21 @@
     if(isset($_POST['song'])){
         if(strlen($_POST['song']) > 1){
             try{
-                utf8mail($to,$subject,$message, "BUCHTICKA WEBSITES"/*"buchticka.eu@gmail.com"*/, "IDK"/*$email_from*/, "CarodkyRC@seznam.cz");
+                //utf8mail($to,$subject,$message, "BUCHTICKA WEBSITES"/*"buchticka.eu@gmail.com"*/, "IDK"/*$email_from*/, "CarodkyRC@seznam.cz");
                 #$sql = mysql_real_escape_string($conn, "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)");
-                $sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)";
+                $sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, status, voting) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0, 0);";
                 #$sql = mysql_real_escape_string($conn, "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)");
+                
                 $conn->query($sql);
                 $conn->close();
+                
                 header("Location: $thankyou");
             }catch(Exception $problem){
-                echo $problem;
+                echo "<script>alert('$problem');</script>";
             }
+        }else{
+            header("Location: index.php?sender=".$_POST["sender"]."&deliver=".$_POST["deliver"]."message=".$_POST['message']."&song=".$_POST["song"]);
         }
     }
+    include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/footer.php';
 ?>

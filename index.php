@@ -1,13 +1,15 @@
 <?php  include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/header.php'; ?>
+        <!-- Google ReCaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <title>Písničky na přání - Čarodky Rudice</title>
         <meta property="og:title" content="Písničky na přání - Čarodky Rudice" />
         <meta property="og:type" content="" />
-        <meta property="og:url" content="https://carodky.buchticka.eu/" />
         <meta property="og:image" content="https://carodky.buchticka.eu/background.jpg" />
         <meta property="og:description" content="Nechte si zahrát písničku na přání" />
-        <meta property="fb:app_id" content="" />
         <!-- Popup style  -->
         <link href="/css/popup.css" rel="stylesheet">
+        <!-- Hide submit button after click -->
+        <script src="/js/buttonHider.js" type="text/javascript"></script>
     </head>
     <body onload="btn.onclick()" style="background-color: transparent; font-family: Trebuchet MS">
 <!--<body style="background-color: transparent; font-family: Trebuchet MS">-->
