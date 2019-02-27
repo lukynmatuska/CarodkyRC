@@ -110,11 +110,12 @@ $('#countdown').countdown({
           secStr="<span>sekund</span></div>";
 	  }
 
-	  	denMezera = "&nbsp;".repeat((data.days.toString().length)/2)
+	  	//denMezera = "&nbsp;".repeat((data.days.toString().length)/2)
 	  	
-	    el.append("<div>" + this.leadingZeros(data.days, 2) + denMezera + denStr);
+	    //el.append("<div>" + this.leadingZeros(data.days, 2) + denMezera + denStr);
+	    el.append("<div>" + this.leadingZeros(data.days,  2) + denStr);
         el.append("<div>" + this.leadingZeros(data.hours, 2) + hodStr);
-        el.append("<div>" + this.leadingZeros(data.min, 2) + minStr);
-        el.append("<div>" + this.leadingZeros(data.sec, 2) + secStr);
+        el.append("<div>" + this.leadingZeros(data.min,   2) + minStr);
+        el.append("<div>" + this.leadingZeros(data.sec,   2) + secStr);
 	}
 });

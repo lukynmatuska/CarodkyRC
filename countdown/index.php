@@ -11,12 +11,17 @@
             Odpočet do začátku <?php echo $nameOfEvent ;?> v Rudici
         </title>
         <style type="text/css">
+            @font-face{
+                font-family: 'Trebuchet MS';
+                src: url('/fonts/TrebuchetMS.ttf');
+            }
+
             div{
-                font-family: Trebuchet MS, Open Sans, sans-serif;
+                font-family: Trebuchet MS, 'Open Sans', sans-serif;
                 font-weight: bold;
             }
             .sub-title{
-                font-family: Trebuchet MS, Open Sans,  sans-serif;
+                font-family: Trebuchet MS, 'Open Sans',  sans-serif;
                 font-weight: bold;
                 color: black;
             }
