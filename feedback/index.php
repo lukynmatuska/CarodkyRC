@@ -1,4 +1,6 @@
 <?php  include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/header.php'; ?>
+        <!-- Google ReCaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <title>Zpětná vazba - Čarodky Rudice</title>
         <meta property="og:title" content="Zpětná vazba - Čarodky Rudice" />
         <meta property="og:type" content="" />
