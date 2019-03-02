@@ -43,28 +43,27 @@ function page_title($url) {
             <h4>Legenda:</h4>
             <table align="center" width="100%">
                 <tr align="center">
-                    <td align="right" width="50%"><i class='em em-white_check_mark'></i></td>
-                    <td align="left"  width="50%">Odehráno</td>
+                    <td align="center"><i class='em em-white_check_mark'></i>&nbsp;Odehráno</td>
                 </tr>
                 <tr align="center">
-                    <td align="right" width="50%"><i class='em em-red_circle'></i></td>
-                    <td align="left"  width="50%">Neodehráno</td>
+                  <td align="center"><i class='em em-red_circle'></i>&nbsp;Neodehráno</td>
                 </tr>
                 <tr align="center">
-                    <td align="right" width="50%"><i class='em em-no_pedestrians'></i></td>
-                    <td align="left"  width="50%">Nepřijmutá&nbsp;žádost</td>
+                   <td align="center"><i class='em em-no_pedestrians'></i>&nbsp;Nepřijmutá&nbsp;žádost</td>
                 </tr>
             </table>
+            <br/>
+            <p>Mohou chybět vymazané žádosti.</p>
             <table class="mui-table mui-table--bordered">
                 <thead>
                     <tr>
-                          <th style="text-align: left; width: 90px; ">ID žádosti</th>
+                          <th style="text-align: left; width: 80px; ">ID žádosti</th>
                           <th style="text-align: left;              ">Song</th>
                           <th style="text-align: left; width: 25px; ">Status</th>
+                          <th style="text-align: left; width: 25px; ">Voting</th>
                     </tr>
                 </thead>
-                <tbody>
-<?php
+                <tbody><?php
     while ($row = mysqli_fetch_array($query)){
         try{
             $urlArray = explode(" ", $row['song']);
@@ -86,32 +85,31 @@ function page_title($url) {
                 $song .= ' <a href="'. $urlArray[$index] .'">' . /*$urlSite*/ $urlTitle .'</a>';
             }else{
                 $urlTitle = "";
-                $song .= " " . $urlArray[$index]; //$song = $row['song'];
+                $song .= $urlArray[$index]; //$song = $row['song'];
             }
         }
         echo "
-                  <tr>
-                      <td style='text-align: center'>".$row['id_zadosti'].  "</td>
-                      <td style='text-align: left'  >".$song .              "</td>
-                      <td style='text-align: center'>";
-        switch($row['status']) {
-            case true:
-                echo "<i class='em em-white_check_mark'></i>";
-                break;
-            case "cancelled":
-                echo "<i class='em em-no_pedestrians'></i>";
-                break;
-            default:
-                echo "<i class='em em-red_circle'></i>";
-                break;
-        }echo "</td>
-           </tr>";
-    }
-?>
+                     <tr>
+                        <td style='text-align: center'>".$row['id_zadosti'].  "</td>
+                        <td style='text-align: left'  >".$song .              "</td>
+                        <td style='text-align: center'>";
+                            switch($row['status']) {
+                                case true:
+                                    echo "<i class='em em-white_check_mark'></i>";
+                                    break;
+                                case "cancelled":
+                                    echo "<i class='em em-no_pedestrians'></i>";
+                                    break;
+                                default:
+                                    echo "<i class='em em-red_circle'></i>";
+                                    break;
+                            }echo "</td>
+                        <td style='text-align: center'>".intval($row['voting'])."</td>
+                     </tr>";
+    }?>
 
                 </tbody>
             </table>
-            <p>Mohou chybět vymazané žádosti.</p>
             <?php  include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/footer.php'; ?>
             </div>
         </div>
