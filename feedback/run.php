@@ -34,8 +34,29 @@ if(isset($_POST['feedback']) and $captcha){
         }else{
           echo "utf8 NOK<br/>";
         } 
-        
-        $sql = "INSERT INTO `zpetna_vazba`(`vzkaz_zpetne_vazby`) VALUES('$vzkaz')"; 
+
+        // Function to get the client ip address
+        function get_client_ip_env() {
+            $ipaddress = '';
+            if (getenv('HTTP_CLIENT_IP'))
+                $ipaddress = getenv('HTTP_CLIENT_IP');
+            else if(getenv('HTTP_X_FORWARDED_FOR'))
+                $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+            else if(getenv('HTTP_X_FORWARDED'))
+                $ipaddress = getenv('HTTP_X_FORWARDED');
+            else if(getenv('HTTP_FORWARDED_FOR'))
+                $ipaddress = getenv('HTTP_FORWARDED_FOR');
+            else if(getenv('HTTP_FORWARDED'))
+                $ipaddress = getenv('HTTP_FORWARDED');
+            else if(getenv('REMOTE_ADDR'))
+                $ipaddress = getenv('REMOTE_ADDR');
+            else
+                $ipaddress = 'UNKNOWN';
+
+            return $ipaddress;
+        }
+
+        $sql = "INSERT INTO `zpetna_vazba`(`vzkaz_zpetne_vazby`, ip) VALUES('$vzkaz', '".get_client_ip_env()."')"; 
         
         if($conn->query($sql)===TRUE){
           echo "inserted data<br/>";
