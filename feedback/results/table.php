@@ -42,5 +42,6 @@
                 ?>
             </tbody>
         </table>
+        <?php include realpath($_SERVER['DOCUMENT_ROOT']).'/htmlParts/footer.php'; ?>
     </body>
 </html>
