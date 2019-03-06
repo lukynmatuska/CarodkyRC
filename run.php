@@ -90,7 +90,8 @@
 
                     return $ipaddress;
                 }
-                $sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, status, voting, ip) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0, 0, '".get_client_ip_env()."');";
+                date_default_timezone_set("Europe/Prague");
+                $sql = "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, status, voting, ip, time) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0, 0, '".get_client_ip_env()."', '".date("Y-m-d H:i:s", time())."');";
                 #$sql = mysql_real_escape_string($conn, "INSERT INTO pisnicky_na_prani(kdo, komu, vzkaz, song, hotovo) VALUES ('$kdo', '$komu', '$vzkaz', '$song', 0)");
                 
                 $conn->query($sql);

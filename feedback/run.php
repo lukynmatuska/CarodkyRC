@@ -55,13 +55,15 @@ if(isset($_POST['feedback']) and $captcha){
 
             return $ipaddress;
         }
-
-        $sql = "INSERT INTO `zpetna_vazba`(`vzkaz_zpetne_vazby`, ip) VALUES('$vzkaz', '".get_client_ip_env()."')"; 
+        
+        date_default_timezone_set("Europe/Prague");
+        $sql = "INSERT INTO `zpetna_vazba`(`vzkaz_zpetne_vazby`, ip, time) VALUES('$vzkaz', '".get_client_ip_env()."', '".date("Y-m-d H:i:s", time())."')"; 
         
         if($conn->query($sql)===TRUE){
-          echo "inserted data<br/>";
+            echo "inserted data<br/>";
         }else{
-          echo "failed<br/>";
+            echo "failed<br/>";
+            echo $conn->error;
         }
     }
    
