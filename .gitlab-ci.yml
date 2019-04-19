@@ -1,11 +1,34 @@
-before_script:
-# copy config
-- cp my_php.ini /usr/local/etc/php/conf.d/test.ini
-# Install dependencies
-- bash ci/docker_install.sh > /dev/null
+image: richarvey/nginx-php-fpm
 
-# We test PHP7.2.13 (good luck with that)
-test:7.2.13:
-  image: php:7.2.13
+before_script:
+  # install ssh-agent
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  # run ssh-agent
+  - eval $(ssh-agent -s)
+  - echo "SSH_PRIVATE_KEY"
+  - echo "$SSH_PRIVATE_KEY"
+  # add ssh key stored in SSH_PRIVATE_KEY variable to the agent store
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  # disable host key checking (NOTE: makes you susceptible to man-in-the-middle attacks)
+  # WARNING: use only in docker container, if you use it with shell you will overwrite your user's ssh config
+  - mkdir -p ~/.ssh
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+  # Composer update and deploy into php location
+  - composer install --no-scripts
+
+stages:
+  - test
+
+test:
   script:
-  - phpunit --configuration phpunit_myapp.xml
+    - /start.sh &
+    - sleep 2
+    - whoami
+    - pwd
+    - ls -al /var/www/
+    - ls -al /var/www/html
+    - netstat -l
+    - ps
+    - php --version
+    - curl "http://localhost/"
